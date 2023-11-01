@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Multiplicação</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Calculadora de Poliuretano</h2>
+  <form>
+    <div class="form-group">
+      <label for="valor1">Altura:</label>
+      <input type="number" class="form-control" id="valor1" placeholder="Digite o valor em centímetros">
+    </div>
+    <div class="form-group">
+      <label for="valor2">Comprimento:</label>
+      <input type="number" class="form-control" id="valor2" placeholder="Digite o valor em centímetros">
+    </div>
+    <div class="form-group">
+      <label for="valor3">Expessura:</label>
+      <input type="number" class="form-control" id="valor3" placeholder="Digite o valor em centímetros">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+  </form>
+
+  <br>
+
+  <div id="poliol"></div>
+  <div id="isocianato"></div>
+  <br>
+  <div id="total"></div>
+
+</div>
+
+<script>
+function calcular() {
+  var valor1 = document.getElementById("valor1").value;
+  var valor2 = document.getElementById("valor2").value;
+  var valor3 = document.getElementById("valor3").value;
+  
+  var total = (valor1 * valor2 * valor3) / 22 ;
+  var individual = total / 2;
+  
+  document.getElementById("poliol").innerHTML = "Poliol: " + individual.toFixed(2) + " ml";
+  document.getElementById("isocianato").innerHTML = "Isocianato: " + individual.toFixed(2) + " ml";
+  document.getElementById("total").innerHTML = "Total: " + total.toFixed(2) + " ml";
+}
+</script>
+
+</body>
+</html>
